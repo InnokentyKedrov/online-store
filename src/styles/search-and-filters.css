@@ -1,0 +1,92 @@
+.search-and-filters {
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 50px auto;
+  color: #000000;
+}
+.search,
+.range,
+.filters {
+  width: 300px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+.filters-author,
+.filters-genre,
+.filters-cover {
+  margin: 10px;
+}
+.filters__title {
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+}
+.filters-author__list,
+.filters-genre__list,
+.filters-cover__list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+  border: 2px solid red;  
+  border-radius: 10px;
+  list-style-type: none;
+}
+.filters-bestseller {
+    display: flex;
+    margin: 10px;
+  }
+.filters__best {
+    width: 24px;
+    height: 24px;
+    margin-left: 10px;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.filters__best:hover {
+    background-color: red;
+    border-color: #ffffff;
+}
+.checked {
+    width: 16px;
+    height: 16px;
+    padding: 4px;
+    background-size: contain;
+    background-image: url(../assets/icons/checkmark.png);
+    background-repeat: no-repeat;
+}
+.filters-author__item,
+.filters-genre__item,
+.filters-cover__item {
+  width: 90px;
+  height: 20px;
+  margin: 5px;
+  padding: 5px;
+  border: 2px solid #000000;  
+  border-radius: 10px;
+  cursor: pointer;
+}
+.filters-author__item:hover,
+.filters-genre__item:hover,
+.filters-cover__item:hover {
+    background-color: red;
+    border-color: #ffffff;
+}
+.active {
+  background-color: red;
+}
+@media (max-width: 1000px) {
+  .filters {
+    flex-grow: 1;
+    margin: 10px 4%;
+  }  
+}

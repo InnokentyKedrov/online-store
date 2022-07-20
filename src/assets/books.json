@@ -1,0 +1,342 @@
+[
+  {
+    "title": "Harry Potter and the Philosopher's Stone",
+    "img": "hp_h_1",
+    "year": "2019",
+    "author": "J. K. Rowling",
+    "genre": "Fantasy",
+    "cover": "Hard",
+    "quantity": "5",
+    "bestseller": "false"
+  },
+  {
+    "title": "Harry Potter and the Chambers of Secrets",
+    "img": "hp_h_2",
+    "year": "2020",
+    "author": "J. K. Rowling",
+    "genre": "Fantasy",
+    "cover": "Hard",
+    "quantity": "6",
+    "bestseller": "false"
+  },
+  {
+    "title": "Harry Potter and the Prisoner of Azkaban",
+    "img": "hp_h_3",
+    "year": "2021",
+    "author": "J. K. Rowling",
+    "genre": "Fantasy",
+    "cover": "Hard",
+    "quantity": "4",
+    "bestseller": "false"
+  },
+  {
+    "title": "Harry Potter and the Goblet of Fire",
+    "img": "hp_h_4",
+    "year": "2021",
+    "author": "J. K. Rowling",
+    "genre": "Fantasy",
+    "cover": "Hard",
+    "quantity": "7",
+    "bestseller": "false"
+  },
+  {
+    "title": "Harry Potter and the Sorcerer's Stone",
+    "img": "hp_1",
+    "year": "2001",
+    "author": "J. K. Rowling",
+    "genre": "Fantasy",
+    "cover": "Soft",
+    "quantity": "7",
+    "bestseller": "false"
+  },
+  {
+    "title": "Harry Potter and the Chambers of Secrets",
+    "img": "hp_2",
+    "year": "2002",
+    "author": "J. K. Rowling",
+    "genre": "Fantasy",
+    "cover": "Soft",
+    "quantity": "20",
+    "bestseller": "false"
+  },
+  {
+    "title": "Harry Potter and the Prisoner of Azkaban",
+    "img": "hp_3",
+    "year": "2003",
+    "author": "J. K. Rowling",
+    "genre": "Fantasy",
+    "cover": "Soft",
+    "quantity": "17",
+    "bestseller": "false"
+  },
+  {
+    "title": "Harry Potter and the Goblet of Fire",
+    "img": "hp_4",
+    "year": "2004",
+    "author": "J. K. Rowling",
+    "genre": "Fantasy",
+    "cover": "Soft",
+    "quantity": "10",
+    "bestseller": "false"
+  },
+  {
+    "title": "Harry Potter and the Order of the Phoenix",
+    "img": "hp_5",
+    "year": "2005",
+    "author": "J. K. Rowling",
+    "genre": "Fantasy",
+    "cover": "Soft",
+    "quantity": "6",
+    "bestseller": "false"
+  },
+  {
+    "title": "Harry Potter and the Half-Blood Prince",
+    "img": "hp_6",
+    "year": "2006",
+    "author": "J. K. Rowling",
+    "genre": "Fantasy",
+    "cover": "Soft",
+    "quantity": "7",
+    "bestseller": "false"
+  },
+  {
+    "title": "Harry Potter and the Deathly Hallows",
+    "img": "hp_7",
+    "year": "2007",
+    "author": "J. K. Rowling",
+    "genre": "Fantasy",
+    "cover": "Soft",
+    "quantity": "6",
+    "bestseller": "false"
+  },
+  {
+    "title": "The Lord of the Rings: The Fellowship of the Ring",
+    "img": "lotr_1",
+    "year": "2012",
+    "author": "J. Tolkien",
+    "genre": "Fantasy",
+    "cover": "Hard",
+    "quantity": "9",
+    "bestseller": "false"
+  },
+  {
+    "title": "The Lord of the Rings: The Two Towers",
+    "img": "lotr_2",
+    "year": "2012",
+    "author": "J. Tolkien",
+    "genre": "Fantasy",
+    "cover": "Hard",
+    "quantity": "10",
+    "bestseller": "false"
+  },
+  {
+    "title": "The Lord of the Rings: The Return of the King",
+    "img": "lotr_3",
+    "year": "2012",
+    "author": "J. Tolkien",
+    "genre": "Fantasy",
+    "cover": "Hard",
+    "quantity": "15",
+    "bestseller": "false"
+  },
+  {
+    "title": "The Hobbit",
+    "img": "hobbit",
+    "year": "2011",
+    "author": "J. Tolkien",
+    "genre": "Fantasy",
+    "cover": "Soft",
+    "quantity": "9",
+    "bestseller": "true"
+  },
+  {
+    "title": "Timur and his team",
+    "img": "timur",
+    "year": "1979",
+    "author": "A. Gaydar",
+    "genre": "Adventure",
+    "cover": "Hard",
+    "quantity": "1",
+    "bestseller": "true"
+  },
+  {
+    "title": "Stick Man",
+    "img": "d_1",
+    "year": "2017",
+    "author": "J. Donaldson",
+    "genre": "Fairy Tale",
+    "cover": "Hard",
+    "quantity": "3",
+    "bestseller": "false"
+  },
+  {
+    "title": "The Gruffalo",
+    "img": "d_2",
+    "year": "2000",
+    "author": "J. Donaldson",
+    "genre": "Fairy Tale",
+    "cover": "Hard",
+    "quantity": "4",
+    "bestseller": "false"
+  },
+  {
+    "title": "The Gruffalo's Child",
+    "img": "d_3",
+    "year": "2004",
+    "author": "J. Donaldson",
+    "genre": "Fairy Tale",
+    "cover": "Hard",
+    "quantity": "5",
+    "bestseller": "false"
+  },
+  {
+    "title": "Room on the Broom",
+    "img": "d_4",
+    "year": "2020",
+    "author": "J. Donaldson",
+    "genre": "Fairy Tale",
+    "cover": "Hard",
+    "quantity": "4",
+    "bestseller": "false"
+  },
+  {
+    "title": "The Adventures of Tom Sawyer",
+    "img": "mt_1",
+    "year": "2022",
+    "author": "Mark Twain",
+    "genre": "Adventure",
+    "cover": "Hard",
+    "quantity": "7",
+    "bestseller": "false"
+  },
+  {
+    "title": "The Adventures of Huckleberry Finn",
+    "img": "mt_2",
+    "year": "2018",
+    "author": "Mark Twain",
+    "genre": "Adventure",
+    "cover": "Hard",
+    "quantity": "10",
+    "bestseller": "false"
+  },
+  {
+    "title": "The Prince And the Pauper",
+    "img": "mt_3",
+    "year": "2018",
+    "author": "Mark Twain",
+    "genre": "Adventure",
+    "cover": "Soft",
+    "quantity": "12",
+    "bestseller": "false"
+  },
+  {
+    "title": "The Call of the Wild",
+    "img": "jl_1",
+    "year": "2022",
+    "author": "Jack London",
+    "genre": "Adventure",
+    "cover": "Soft",
+    "quantity": "3",
+    "bestseller": "false"
+  },
+  {
+    "title": "The Sea-Wolf",
+    "img": "jl_2",
+    "year": "2022",
+    "author": "Jack London",
+    "genre": "Adventure",
+    "cover": "Soft",
+    "quantity": "16",
+    "bestseller": "false"
+  },
+  {
+    "title": "The God of His Fathers and Other Tales",
+    "img": "jl_3",
+    "year": "2022",
+    "author": "Jack London",
+    "genre": "Adventure",
+    "cover": "Soft",
+    "quantity": "12",
+    "bestseller": "false"
+  },
+  {
+    "title": "Adventure",
+    "img": "jl_4",
+    "year": "2022",
+    "author": "Jack London",
+    "genre": "Adventure",
+    "cover": "Soft",
+    "quantity": "17",
+    "bestseller": "false"
+  },
+  {
+    "title": "White Fang",
+    "img": "jl_5",
+    "year": "1920",
+    "author": "Jack London",
+    "genre": "Adventure",
+    "cover": "Hard",
+    "quantity": "1",
+    "bestseller": "false"
+  },
+  {
+    "title": "Martin Eden",
+    "img": "jl_6",
+    "year": "2019",
+    "author": "Jack London",
+    "genre": "Adventure",
+    "cover": "Hard",
+    "quantity": "5",
+    "bestseller": "false"
+  },
+  {
+    "title": "A Game of Thrones",
+    "img": "gm_1",
+    "year": "2003",
+    "author": "G. Martin",
+    "genre": "Adventure",
+    "cover": "Hard",
+    "quantity": "5",
+    "bestseller": "true"
+  },
+  {
+    "title": "A Clash of Kings",
+    "img": "gm_2",
+    "year": "2003",
+    "author": "G. Martin",
+    "genre": "Adventure",
+    "cover": "Hard",
+    "quantity": "6",
+    "bestseller": "false"
+  },
+  {
+    "title": "Fire and Blood",
+    "img": "gm_3",
+    "year": "2018",
+    "author": "G. Martin",
+    "genre": "Adventure",
+    "cover": "Hard",
+    "quantity": "8",
+    "bestseller": "false"
+  },
+  {
+    "title": "A Knight of the Seven Kingdoms",
+    "img": "gm_4",
+    "year": "2017",
+    "author": "G. Martin",
+    "genre": "Adventure",
+    "cover": "Soft",
+    "quantity": "3",
+    "bestseller": "false"
+  },
+  {
+    "title": "A Dance with Dragons",
+    "img": "gm_5",
+    "year": "2012",
+    "author": "G. Martin",
+    "genre": "Adventure",
+    "cover": "Soft",
+    "quantity": "8",
+    "bestseller": "false"
+  }
+]

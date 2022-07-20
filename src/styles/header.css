@@ -1,0 +1,168 @@
+.body {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 100%;
+  margin: 0 auto;
+  margin-top: 120px;
+  overflow-y: scroll;
+  font-family: "Arial", sans-serif;
+  font-style: normal;
+  font-size: 15px;
+  line-height: 24px;
+  font-weight: 400;
+  color: gray;
+  background-color: #000000;
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+}
+.header__wrapper {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 120px;
+  background-color: red;
+  z-index: 10;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px;
+}
+.logo {
+  width: 200px;
+  height: 50px;
+  background-image: url(../assets/icons/logo_horiz.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.header__navigation {
+  margin: 0;
+  padding: 0;
+  color: #292929;
+}
+.header__navigation_list {
+  display: flex;
+  height: 80px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.header__navigation_item {
+  margin: 17px 0;
+}
+.header__navigation_item:not(:last-child) {
+  margin-right: 36px;
+}
+.header__navigation_item_link {
+  padding-bottom: 3px;
+  text-decoration: none;
+  color: #ffffff;
+}
+.header__navigation_item_link:hover {
+  color: #000000;
+}
+.header__navigation_item_link:active {
+  color: #fafafa;
+  border-bottom: 3px solid #000000;
+  transition: 0.3s;
+}
+.header__navigation_item_link_current {
+  color: #000000;
+  border-bottom: 3px solid #000000;
+}
+.header__user_list {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+}
+.header__user_item:not(:last-child) {
+  margin-right: 40px;
+}
+.header__user_link {
+  text-decoration: none;
+  padding-left: 30px;
+  position: relative;
+  color: #ffffff;
+}
+.header__user_link:hover {
+  color: #000000;
+}
+.header__user_link::before {
+  position: absolute;
+  content: '';
+  width: 30px;
+  height: 30px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: -5px;
+}
+.header__user_link_basket::before {
+  background-image: url(../assets/icons/basket.png);
+  left: -10px;
+}
+.header__user_link_basket::after {
+    position: absolute;
+    content: attr(data-after);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    top: -16px;
+    left: 7px;
+    background-color: green;
+    border: 2px solid #000000;
+    border-radius: 50%;
+}
+.header__user_link_login::before {
+  background-image: url(../assets/icons/login.png);
+  left: -5px;
+}
+@media (max-width: 800px) {
+    
+    .logo {
+        width: 60px;
+        background-image: url(../assets/icons/logo_vert.svg);
+    }
+
+}
+@media (max-width: 560px) {
+    
+    .header {
+        height: 80px;
+        margin: 0;
+        padding: 20px;
+    }
+    .header__navigation_list {
+        flex-direction: column;
+    }
+    .header__navigation_item {
+        margin: 0;
+    }
+    .header__navigation_item:not(:last-child) {
+        margin-right: 0;
+    }    
+    .header__user_list {
+        margin: 0;
+    }
+    .header__user_item:not(:last-child) {
+        margin-right: 10px;
+    }
+
+}

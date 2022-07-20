@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Books page</title>
+  <link rel="stylesheet" href="../styles/header.css">
+</head>
+
+<body class="body">
+  <div class="header__wrapper">
+    <header class="header">
+      <h1 class="visually-hidden">Online store "Bookcase"</h1>
+      <a class="logo" href="index.html"></a>
+      <nav class="header__navigation">
+        <ul class="header__navigation_list">
+          <li class="header__navigation_item">
+            <a class="header__navigation_item_link" href="main.html">
+              Main
+            </a>
+          </li>
+          <li class="header__navigation_item">
+            <a class="header__navigation_item_link" href="about.html">
+              About
+            </a>
+          </li>
+          <li class="header__navigation_item">
+            <a class="header__navigation_item_link header__navigation_item_link_current" href="#">
+              Books
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <ul class="header__user_list">
+        <li class="header__user_item">
+          <a href="#" class="header__user_link header__user_link_basket" id="basket" data-after="0">Basket</a>
+        </li>
+        <li class="header__user_item">
+          <a href="#" class="header__user_link header__user_link_login">Login</a>
+        </li>
+      </ul>
+    </header>
+  </div>
+
+  <main>
+    <section class="search-and-filters">
+      <article class="search">
+        <div class="search__container">
+            <label class="search__title" for="search">SEARCH FOR NAME:</label>
+            <input class='search__input' id="search" type="text" value="" autocomplete="off" placeholder="🔍 Enter text" autofocus>
+            <div class="search__clean"></div>
+        </div>
+        
+        <div class="sort__container">
+            <label class='sort__title' for="sort">SORT BY:</label>
+            <select class="sort__select" id="sort" name="sort">
+                <option value="alphabetAZ" id="alphabetAZ">Alphabetically from a to z</option>
+                <option value="alphabetZA" id="alphabetZA">Alphabetically from z to a</option>
+                <option value="yearUp" id="yearUp">Year of publication, ascending</option>
+                <option value="yearDown" id="yearDown">Year of publication, descending</option>
+            </select>
+        </div>
+        <div class="buttons__container">
+          <button class="button__filters">Reset filters</button>
+          <button class="button__sort">Reset filters, sort and basket</button>
+        </div>
+      </article>
+      
+      <article class="range">
+        <div class="range__container">
+          <h2 class="range__title">QUANTITY ON STORAGE:</h2>
+          <div class="range__slider">
+            <div id="quantity-range"></div>
+          </div>
+        </div>
+        <div class="range__container">
+          <h2 class="range__title">YEAR OF RELEASE:</h2>
+          <div class="range__slider">
+            <div id="year-range"></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="filters">
+        <div class="filters-author">
+          <h2 class="filters__title">AUTHORS</h2>
+          <ul class="filters-author__list"></ul>
+        </div>
+        <div class="filters-genre">
+          <h2 class="filters__title">GENRE</h2>
+          <ul class="filters-genre__list"></ul>
+        </div>
+        <div class="filters-cover">
+          <h2 class="filters__title">COVER</h2>
+          <ul class="filters-cover__list"></ul>
+        </div>
+        <div class="filters-bestseller">
+          <h2 class="filters__title">BESTSELLERS</h2>
+          <div class="filters__best" id="best"></div>
+        </div>  
+      </article>
+    </section>
+
+    <section class="books">
+      <ul class="books__list"></ul>
+    </section>
+  </main>
+
+  <div class="footer__wrapper">
+    <footer class="footer">
+      <a class="footer__github" href="https://github.com/innokentykedrov">https://github.com/innokentykedrov</a>
+      <span>&copy;2022</span>
+      <a class="footer__logo" href="https://rs.school/js/"></a>
+    </footer>
+  </div>
+
+  <div class="modal" id="modal">
+    <h2 class="modal__title">Sorry, the basket is full!</h2>
+  </div>
+  
+</body>
+</html>

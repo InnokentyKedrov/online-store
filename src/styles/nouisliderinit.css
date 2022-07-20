@@ -1,0 +1,55 @@
+.range__container {
+  margin: 10px;
+}
+.range__container:first-child {
+  margin-bottom: 24px;
+}
+.range__title {
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 48px;
+}
+.range__slider {
+  margin-bottom: 24px;
+}
+.noUi-connect {
+  background-color: red;
+}
+.noUi-target {
+  border: 2px solid #000000;  
+  border-radius: 10px;
+}
+.noUi-handle {
+  border: 2px solid #000000;  
+  border-radius: 10px;
+}
+.noUi-handle:before,
+.noUi-handle:after {
+  display: none;
+}
+.noUi-handle-lower {
+  background-color: red;
+}
+.noUi-handle-upper {
+  background-color: red;
+}
+.noUi-horizontal {
+  height: 13px;
+}
+.noUi-horizontal .noUi-handle {
+  width: 24px;
+  height: 24px;
+  right: -12px;
+}
+.noUi-tooltip {
+    border: 2px solid #000000;
+    border-radius: 10px;
+    background: #ffffff;
+    color: #000000;
+    padding: 5px;
+}
+.noUi-tooltip:hover {
+    background: red;
+    cursor: pointer;
+}

@@ -1,0 +1,49 @@
+.footer__wrapper {
+  width: 100%;
+  background-color: red;
+}
+.footer {
+  display: flex;
+  max-width: 1200px;
+  justify-content: center;
+  margin: 0 auto;
+  gap: 10%;
+  padding: 50px 0;
+  color: #ffffff;
+}
+.footer__github {
+  position: relative;
+  text-decoration: none;
+  padding-left: 10px;
+  color: #ffffff;
+}
+.footer__github:hover {
+    color: #000000;
+}
+.footer__github::before {
+  content: '';
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  background-image: url(../assets/icons/github.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  left: -30px;
+  top: -5px;
+}
+.footer__logo {
+  width: 100px;
+  height: 30px;  
+  background-image: url(../assets/icons/rs_school_js.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+@media (max-width: 560px) {
+    
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 20px 0;
+    }
+}

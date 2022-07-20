@@ -1,0 +1,90 @@
+.books__list,
+.bestsellers__list {
+  max-width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  list-style-type: none;
+  gap: 20px;
+  padding: 0;
+  margin: 50px auto;
+}
+.books__item,
+.bestsellers__item {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #1f1f1f;
+  border-radius: 10px;
+}
+.books__item_container {
+    margin: 10px;
+}
+.books__item_title {
+  color: white;
+  margin: 10px 25px;
+  height: 48px;
+}
+.books__item_image {
+  width: 250px;
+  height: 380px;
+  margin: 10px auto;
+  border-radius: 10px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.thrones {
+    background-image: url(../assets/images/gm_1.jpg);
+}
+.hobbit {
+    background-image: url(../assets/images/hobbit.jpg);
+}
+.timur {
+    background-image: url(../assets/images/timur.jpg);
+}
+.books__item_table {
+  margin-left: 20px;
+}
+.books__item_button {
+  display: block;
+  margin: 0 auto;
+  padding: 5px 10px;
+  cursor: pointer;
+  border: 2px solid red;
+  border-radius: 10px;
+  background-color: white;
+}
+.books__item_button:hover {
+    background-color: red;
+    border-color: #ffffff;
+}
+.books__item_empty {
+    text-align: center;
+}
+.active {
+    background-color: red;
+}
+.modal {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 1;
+    background-color: rgba(100, 100, 100, 0.5);
+}
+.modal__title {
+    width: 300px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    border: 2px solid red;
+    border-radius: 10px;
+    color: red;
+    background-color: #ffffff;
+}
+.open {
+    display: flex;
+}
