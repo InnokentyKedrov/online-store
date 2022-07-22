@@ -1,8 +1,6 @@
 import '../styles/search-and-filters.css';
 const Books = require('../assets/books.json');
 
-// Filter of Authors
-
 function filterAuthor(index: number) {
     const FilterAuth = document.createElement('li');
     FilterAuth.classList.add('filters-author__item');
@@ -23,8 +21,6 @@ export function renderFilterAuthor() {
     }
 }
 
-// Filter of Genre
-
 function filterGenre(index: number) {
     const FilterGen = document.createElement('li');
     FilterGen.classList.add('filters-genre__item');
@@ -44,8 +40,6 @@ export function renderFilterGenre() {
         }
     }
 }
-
-// Filter of Cover
 
 export function filterCover(index: number) {
     const FilterCov = document.createElement('li');

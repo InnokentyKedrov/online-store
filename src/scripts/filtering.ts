@@ -38,8 +38,6 @@ export function currentRender() {
                     localStorage.getItem('author') === null) &&
                 (localStorage.getItem('genre')?.includes(Books[i].genre) || localStorage.getItem('genre') === null) &&
                 (localStorage.getItem('cover')?.includes(Books[i].cover) || localStorage.getItem('cover') === null) &&
-                // (localStorage.getItem('searchArray')?.includes(BOOKS[i].title) ||
-                //     localStorage.getItem('searchArray') === null) &&
                 Books[i].quantity <= quantityMax &&
                 Books[i].quantity >= quantityMin &&
                 Books[i].year <= yearMax &&
@@ -56,8 +54,6 @@ export function currentRender() {
                     localStorage.getItem('author') === null) &&
                 (localStorage.getItem('genre')?.includes(Books[i].genre) || localStorage.getItem('genre') === null) &&
                 (localStorage.getItem('cover')?.includes(Books[i].cover) || localStorage.getItem('cover') === null) &&
-                // (localStorage.getItem('searchArray')?.includes(BOOKS[i].title) ||
-                //     localStorage.getItem('searchArray') === null) &&
                 Books[i].bestseller === 'true' &&
                 Books[i].quantity <= quantityMax &&
                 Books[i].quantity >= quantityMin &&

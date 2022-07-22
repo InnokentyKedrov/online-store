@@ -1,4 +1,3 @@
-// import { basket } from './basket';
 import { basket } from './basket';
 import { currentRender } from './filtering';
 import { rangeInit } from './nouisliderinit';
@@ -15,25 +14,6 @@ function resetActive(array: NodeListOf<Element>) {
 function resetBest() {
     document.getElementById('best')?.classList.remove('checked');
 }
-
-// function resetBasket() {
-//     const Buttons = document.querySelectorAll('.books__item_button');
-//     for (let i = 0; i < Buttons.length; i++) {
-//         if (Buttons[i].classList.contains('active')) {
-//             Buttons[i].classList.remove('active');
-//         }
-//     }
-// }
-
-// function resetBasketCount() {
-//     const Basket = document.getElementById('basket') as HTMLElement;
-//     Basket.dataset.after = '0';
-// }
-
-// function resetSearch() {
-//     const Search = document.getElementById('search') as HTMLInputElement;
-//     Search.value = '';
-// }
 
 export function resetFilters() {
     const ResetFiltersButton = document.querySelector('.button__filters');
@@ -65,20 +45,9 @@ export function resetFilters() {
 
 export function resetAll() {
     const ButtonAll = document.querySelector('.button__sort');
-    // const AuthorsArray = document.querySelectorAll('.filters-author__item');
-    // const GenreArray = document.querySelectorAll('.filters-genre__item');
-    // const CoverArray = document.querySelectorAll('.filters-cover__item');
 
     ButtonAll?.addEventListener('click', () => {
         localStorage.clear();
-        // resetActive(AuthorsArray);
-        // resetActive(GenreArray);
-        // resetActive(CoverArray);
-        // resetBest();
-        // resetBasket();
-        // resetSearch();
-        // resetBasketCount();
-        // currentSearchClear();
         location.reload();
         basket();
         rangeInit();
