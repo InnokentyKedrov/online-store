@@ -40,13 +40,13 @@ export function checkYear() {
 }
 
 export function rangeInit() {
-    const quantityRange = document.getElementById('quantity-range') as noUiSlider.target;
+    const QuantityRange = document.getElementById('quantity-range') as noUiSlider.target;
     let [quantityMin, quantityMax] = checkQuantity();
 
-    quantityRange.noUiSlider?.set([quantityMin, quantityMax]);
+    QuantityRange.noUiSlider?.set([quantityMin, quantityMax]);
 
-    if (!quantityRange.noUiSlider) {
-        noUiSlider.create(quantityRange, {
+    if (!QuantityRange.noUiSlider) {
+        noUiSlider.create(QuantityRange, {
             start: [0, 20],
             tooltips: true,
             connect: true,
@@ -65,8 +65,8 @@ export function rangeInit() {
             },
         });
     }
-    if (quantityRange.noUiSlider) {
-        quantityRange.noUiSlider.on('change', (values: (string | number)[]) => {
+    if (QuantityRange.noUiSlider) {
+        QuantityRange.noUiSlider.on('change', (values: (string | number)[]) => {
             localStorage.setItem('quantityMin', values[0] as string);
             localStorage.setItem('quantityMax', values[1] as string);
             quantityMin = Number(localStorage.getItem('quantityMin'));
@@ -74,15 +74,15 @@ export function rangeInit() {
             currentRender();
         });
     }
-    quantityRange.noUiSlider?.set([quantityMin, quantityMax]);
+    QuantityRange.noUiSlider?.set([quantityMin, quantityMax]);
 
-    const yearRange = document.getElementById('year-range') as noUiSlider.target;
+    const YearRange = document.getElementById('year-range') as noUiSlider.target;
     let [yearMin, yearMax] = checkYear();
 
-    yearRange.noUiSlider?.set([yearMin, yearMax]);
+    YearRange.noUiSlider?.set([yearMin, yearMax]);
 
-    if (!yearRange.noUiSlider) {
-        noUiSlider.create(yearRange, {
+    if (!YearRange.noUiSlider) {
+        noUiSlider.create(YearRange, {
             start: [1900, 2022],
             tooltips: true,
             connect: true,
@@ -101,8 +101,8 @@ export function rangeInit() {
             },
         });
     }
-    if (yearRange.noUiSlider) {
-        yearRange.noUiSlider.on('change', (values: (string | number)[]) => {
+    if (YearRange.noUiSlider) {
+        YearRange.noUiSlider.on('change', (values: (string | number)[]) => {
             localStorage.setItem('yearMin', values[0] as string);
             localStorage.setItem('yearMax', values[1] as string);
             yearMin = Number(localStorage.getItem('yearMin'));
@@ -110,5 +110,5 @@ export function rangeInit() {
             currentRender();
         });
     }
-    yearRange.noUiSlider?.set([yearMin, yearMax]);
+    YearRange.noUiSlider?.set([yearMin, yearMax]);
 }

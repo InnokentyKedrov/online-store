@@ -12,16 +12,16 @@ function removeBooks() {
 }
 
 function removeEmptyItem() {
-    const emptyItem = document.querySelector('.books__item_empty');
-    if (emptyItem) {
-        emptyItem.remove();
+    const EmptyItem = document.querySelector('.books__item_empty');
+    if (EmptyItem) {
+        EmptyItem.remove();
     }
 }
 
 export function currentRender() {
     removeBooks();
     removeEmptyItem();
-    const BOOKS = sorting();
+    const Books = sorting();
     let searchArray;
     if (localStorage.getItem('searchArray') === null) {
         searchArray = [];
@@ -32,38 +32,38 @@ export function currentRender() {
     const [yearMin, yearMax] = checkYear();
 
     if (localStorage.getItem('best') === null) {
-        for (let i = 0; i < BOOKS.length; i++) {
+        for (let i = 0; i < Books.length; i++) {
             if (
-                (localStorage.getItem('author')?.includes(BOOKS[i].author) ||
+                (localStorage.getItem('author')?.includes(Books[i].author) ||
                     localStorage.getItem('author') === null) &&
-                (localStorage.getItem('genre')?.includes(BOOKS[i].genre) || localStorage.getItem('genre') === null) &&
-                (localStorage.getItem('cover')?.includes(BOOKS[i].cover) || localStorage.getItem('cover') === null) &&
+                (localStorage.getItem('genre')?.includes(Books[i].genre) || localStorage.getItem('genre') === null) &&
+                (localStorage.getItem('cover')?.includes(Books[i].cover) || localStorage.getItem('cover') === null) &&
                 // (localStorage.getItem('searchArray')?.includes(BOOKS[i].title) ||
                 //     localStorage.getItem('searchArray') === null) &&
-                BOOKS[i].quantity <= quantityMax &&
-                BOOKS[i].quantity >= quantityMin &&
-                BOOKS[i].year <= yearMax &&
-                BOOKS[i].year >= yearMin &&
-                searchArray.includes(BOOKS[i].title)
+                Books[i].quantity <= quantityMax &&
+                Books[i].quantity >= quantityMin &&
+                Books[i].year <= yearMax &&
+                Books[i].year >= yearMin &&
+                searchArray.includes(Books[i].title)
             ) {
                 renderBook(i);
             }
         }
     } else {
-        for (let i = 0; i < BOOKS.length; i++) {
+        for (let i = 0; i < Books.length; i++) {
             if (
-                (localStorage.getItem('author')?.includes(BOOKS[i].author) ||
+                (localStorage.getItem('author')?.includes(Books[i].author) ||
                     localStorage.getItem('author') === null) &&
-                (localStorage.getItem('genre')?.includes(BOOKS[i].genre) || localStorage.getItem('genre') === null) &&
-                (localStorage.getItem('cover')?.includes(BOOKS[i].cover) || localStorage.getItem('cover') === null) &&
+                (localStorage.getItem('genre')?.includes(Books[i].genre) || localStorage.getItem('genre') === null) &&
+                (localStorage.getItem('cover')?.includes(Books[i].cover) || localStorage.getItem('cover') === null) &&
                 // (localStorage.getItem('searchArray')?.includes(BOOKS[i].title) ||
                 //     localStorage.getItem('searchArray') === null) &&
-                BOOKS[i].bestseller === 'true' &&
-                BOOKS[i].quantity <= quantityMax &&
-                BOOKS[i].quantity >= quantityMin &&
-                BOOKS[i].year <= yearMax &&
-                BOOKS[i].year >= yearMin &&
-                searchArray.includes(BOOKS[i].title)
+                Books[i].bestseller === 'true' &&
+                Books[i].quantity <= quantityMax &&
+                Books[i].quantity >= quantityMin &&
+                Books[i].year <= yearMax &&
+                Books[i].year >= yearMin &&
+                searchArray.includes(Books[i].title)
             ) {
                 renderBook(i);
             }
@@ -71,11 +71,11 @@ export function currentRender() {
     }
 
     if (document.querySelectorAll('.books__item')[0] === undefined) {
-        const emptyItem = document.createElement('li');
-        emptyItem.classList.add('books__item_empty');
-        emptyItem.innerHTML = `<p>Sorry, we don't any books that fit your description.</p>`;
+        const EmptyItem = document.createElement('li');
+        EmptyItem.classList.add('books__item_empty');
+        EmptyItem.innerHTML = `<p>Sorry, we don't any books that fit your description.</p>`;
         if (document.querySelector('.books__list')) {
-            (document.querySelector('.books__list') as HTMLUListElement).appendChild(emptyItem);
+            (document.querySelector('.books__list') as HTMLUListElement).appendChild(EmptyItem);
         }
     }
     activeBasket();
@@ -84,24 +84,24 @@ export function currentRender() {
 
 export function filteringAuthor() {
     const Authors = document.querySelector('.filters-author__list') as HTMLUListElement;
-    const currentAuthorArray: string[] = [];
+    const CurrentAuthorArray: string[] = [];
 
     if (Authors) {
         Authors.addEventListener('click', (event) => {
-            const target = event.target as HTMLLIElement;
-            if (target.tagName !== 'LI') {
+            const Target = event.target as HTMLLIElement;
+            if (Target.tagName !== 'LI') {
                 return;
             }
-            if (currentAuthorArray.includes(target.id)) {
-                target.classList.remove('active');
-                currentAuthorArray.splice(currentAuthorArray.indexOf(target.id), 1);
+            if (CurrentAuthorArray.includes(Target.id)) {
+                Target.classList.remove('active');
+                CurrentAuthorArray.splice(CurrentAuthorArray.indexOf(Target.id), 1);
             } else {
-                currentAuthorArray.push(target.id);
-                target.classList.add('active');
+                CurrentAuthorArray.push(Target.id);
+                Target.classList.add('active');
             }
 
-            if (currentAuthorArray.length !== 0) {
-                localStorage.setItem('author', JSON.stringify(currentAuthorArray));
+            if (CurrentAuthorArray.length !== 0) {
+                localStorage.setItem('author', JSON.stringify(CurrentAuthorArray));
             } else {
                 localStorage.removeItem('author');
             }
@@ -113,24 +113,24 @@ export function filteringAuthor() {
 
 export function filteringGenre() {
     const Genre = document.querySelector('.filters-genre__list') as HTMLUListElement;
-    const currentGenreArray: string[] = [];
+    const CurrentGenreArray: string[] = [];
 
     if (Genre) {
         Genre.addEventListener('click', (event) => {
-            const target = event.target as HTMLLIElement;
-            if (target.tagName !== 'LI') {
+            const Target = event.target as HTMLLIElement;
+            if (Target.tagName !== 'LI') {
                 return;
             }
-            if (currentGenreArray.includes(target.id)) {
-                target.classList.remove('active');
-                currentGenreArray.splice(currentGenreArray.indexOf(target.id), 1);
+            if (CurrentGenreArray.includes(Target.id)) {
+                Target.classList.remove('active');
+                CurrentGenreArray.splice(CurrentGenreArray.indexOf(Target.id), 1);
             } else {
-                currentGenreArray.push(target.id);
-                target.classList.add('active');
+                CurrentGenreArray.push(Target.id);
+                Target.classList.add('active');
             }
 
-            if (currentGenreArray.length !== 0) {
-                localStorage.setItem('genre', JSON.stringify(currentGenreArray));
+            if (CurrentGenreArray.length !== 0) {
+                localStorage.setItem('genre', JSON.stringify(CurrentGenreArray));
             } else {
                 localStorage.removeItem('genre');
             }
@@ -142,24 +142,24 @@ export function filteringGenre() {
 
 export function filteringCover() {
     const Cover = document.querySelector('.filters-cover__list') as HTMLUListElement;
-    const currentCoverArray: string[] = [];
+    const CurrentCoverArray: string[] = [];
 
     if (Cover) {
         Cover.addEventListener('click', (event) => {
-            const target = event.target as HTMLLIElement;
-            if (target.tagName !== 'LI') {
+            const Target = event.target as HTMLLIElement;
+            if (Target.tagName !== 'LI') {
                 return;
             }
-            if (currentCoverArray.includes(target.id)) {
-                target.classList.remove('active');
-                currentCoverArray.splice(currentCoverArray.indexOf(target.id), 1);
+            if (CurrentCoverArray.includes(Target.id)) {
+                Target.classList.remove('active');
+                CurrentCoverArray.splice(CurrentCoverArray.indexOf(Target.id), 1);
             } else {
-                currentCoverArray.push(target.id);
-                target.classList.add('active');
+                CurrentCoverArray.push(Target.id);
+                Target.classList.add('active');
             }
 
-            if (currentCoverArray.length !== 0) {
-                localStorage.setItem('cover', JSON.stringify(currentCoverArray));
+            if (CurrentCoverArray.length !== 0) {
+                localStorage.setItem('cover', JSON.stringify(CurrentCoverArray));
             } else {
                 localStorage.removeItem('cover');
             }

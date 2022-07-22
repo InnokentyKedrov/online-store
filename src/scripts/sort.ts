@@ -1,14 +1,14 @@
 import { Ibook } from './books';
 import { currentRender } from './filtering';
 
-const BOOKS = require('../assets/books.json');
+const Books = require('../assets/books.json');
 
 export function sort() {
     document.addEventListener('DOMContentLoaded', () => {
-        const currentSort = localStorage.getItem('sortValue');
-        if (currentSort !== null) {
-            const option = document.getElementById(currentSort) as HTMLOptionElement;
-            option.selected = true;
+        const CurrentSort = localStorage.getItem('sortValue');
+        if (CurrentSort !== null) {
+            const Option = document.getElementById(CurrentSort) as HTMLOptionElement;
+            Option.selected = true;
         }
     });
     let sortValue;
@@ -39,26 +39,26 @@ export function sorting() {
     }
 
     if (sortValue === 'alphabetAZ') {
-        BOOKS.sort((prev: Ibook, next: Ibook) => {
+        Books.sort((prev: Ibook, next: Ibook) => {
             if (prev.title > next.title) return 1;
             if (prev.title < next.title) return -1;
         });
     }
 
     if (sortValue === 'alphabetZA') {
-        BOOKS.sort((prev: Ibook, next: Ibook) => {
+        Books.sort((prev: Ibook, next: Ibook) => {
             if (prev.title < next.title) return 1;
             if (prev.title > next.title) return -1;
         });
     }
 
     if (sortValue === 'yearUp') {
-        BOOKS.sort((prev: Ibook, next: Ibook) => Number(prev.year) - Number(next.year));
+        Books.sort((prev: Ibook, next: Ibook) => Number(prev.year) - Number(next.year));
     }
 
     if (sortValue === 'yearDown') {
-        BOOKS.sort((prev: Ibook, next: Ibook) => Number(next.year) - Number(prev.year));
+        Books.sort((prev: Ibook, next: Ibook) => Number(next.year) - Number(prev.year));
     }
 
-    return BOOKS;
+    return Books;
 }

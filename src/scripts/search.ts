@@ -1,27 +1,27 @@
 import { currentRender } from './filtering';
-const BOOKS = require('../assets/books.json');
+const Books = require('../assets/books.json');
 
 const Search = document.getElementById('search') as HTMLInputElement;
 
 export function currentSearch() {
     document.addEventListener('DOMContentLoaded', () => {
         const TitleArray: string[] = [];
-        const currentTitleArray = document.querySelectorAll('.books__item_title');
+        const CurrentTitleArray = document.querySelectorAll('.books__item_title');
 
-        for (let i = 0; i < currentTitleArray.length; i++) {
-            TitleArray.push((currentTitleArray[i].textContent as string).toLowerCase());
+        for (let i = 0; i < CurrentTitleArray.length; i++) {
+            TitleArray.push((CurrentTitleArray[i].textContent as string).toLowerCase());
         }
         Search?.addEventListener('keyup', () => {
-            const searchArray: string[] = [];
-            for (let i = 0; i < BOOKS.length; i++) {
+            const SearchArray: string[] = [];
+            for (let i = 0; i < Books.length; i++) {
                 if (
-                    TitleArray.includes(BOOKS[i].title.toLowerCase()) &&
-                    BOOKS[i].title.toLowerCase().indexOf(Search.value.toLowerCase()) != -1
+                    TitleArray.includes(Books[i].title.toLowerCase()) &&
+                    Books[i].title.toLowerCase().indexOf(Search.value.toLowerCase()) != -1
                 ) {
-                    searchArray.push(BOOKS[i].title);
+                    SearchArray.push(Books[i].title);
                 }
             }
-            localStorage.setItem('searchArray', JSON.stringify(searchArray));
+            localStorage.setItem('searchArray', JSON.stringify(SearchArray));
             currentRender();
         });
     });
@@ -29,8 +29,8 @@ export function currentSearch() {
 
 export function currentSearchClear() {
     const FullArray = [];
-    for (let i = 0; i < BOOKS.length; i++) {
-        FullArray.push(BOOKS[i].title);
+    for (let i = 0; i < Books.length; i++) {
+        FullArray.push(Books[i].title);
     }
     localStorage.setItem('searchArray', JSON.stringify(FullArray));
 }

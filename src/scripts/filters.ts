@@ -1,23 +1,23 @@
 import '../styles/search-and-filters.css';
-const BOOKS = require('../assets/books.json');
+const Books = require('../assets/books.json');
 
 // Filter of Authors
 
 function filterAuthor(index: number) {
-    const filterAuth = document.createElement('li');
-    filterAuth.classList.add('filters-author__item');
-    filterAuth.setAttribute('id', BOOKS[index].author);
-    filterAuth.innerHTML = `${BOOKS[index].author}`;
+    const FilterAuth = document.createElement('li');
+    FilterAuth.classList.add('filters-author__item');
+    FilterAuth.setAttribute('id', Books[index].author);
+    FilterAuth.innerHTML = `${Books[index].author}`;
     if (document.querySelector('.filters-author__list')) {
-        (document.querySelector('.filters-author__list') as HTMLUListElement).appendChild(filterAuth);
+        (document.querySelector('.filters-author__list') as HTMLUListElement).appendChild(FilterAuth);
     }
 }
 
 export function renderFilterAuthor() {
-    const AUTORS_ARRAY: number[] = [];
-    for (let i = 0; i < BOOKS.length; i++) {
-        if (!AUTORS_ARRAY.includes(BOOKS[i].author)) {
-            AUTORS_ARRAY.push(BOOKS[i].author);
+    const AuthorsArray: number[] = [];
+    for (let i = 0; i < Books.length; i++) {
+        if (!AuthorsArray.includes(Books[i].author)) {
+            AuthorsArray.push(Books[i].author);
             filterAuthor(i);
         }
     }
@@ -26,20 +26,20 @@ export function renderFilterAuthor() {
 // Filter of Genre
 
 function filterGenre(index: number) {
-    const filterGen = document.createElement('li');
-    filterGen.classList.add('filters-genre__item');
-    filterGen.setAttribute('id', BOOKS[index].genre);
-    filterGen.innerHTML = `${BOOKS[index].genre}`;
+    const FilterGen = document.createElement('li');
+    FilterGen.classList.add('filters-genre__item');
+    FilterGen.setAttribute('id', Books[index].genre);
+    FilterGen.innerHTML = `${Books[index].genre}`;
     if (document.querySelector('.filters-genre__list')) {
-        (document.querySelector('.filters-genre__list') as HTMLUListElement).appendChild(filterGen);
+        (document.querySelector('.filters-genre__list') as HTMLUListElement).appendChild(FilterGen);
     }
 }
 
 export function renderFilterGenre() {
-    const GENRE_ARRAY: number[] = [];
-    for (let i = 0; i < BOOKS.length; i++) {
-        if (!GENRE_ARRAY.includes(BOOKS[i].genre)) {
-            GENRE_ARRAY.push(BOOKS[i].genre);
+    const GenreArray: number[] = [];
+    for (let i = 0; i < Books.length; i++) {
+        if (!GenreArray.includes(Books[i].genre)) {
+            GenreArray.push(Books[i].genre);
             filterGenre(i);
         }
     }
@@ -48,20 +48,20 @@ export function renderFilterGenre() {
 // Filter of Cover
 
 export function filterCover(index: number) {
-    const filterCov = document.createElement('li');
-    filterCov.classList.add('filters-cover__item');
-    filterCov.setAttribute('id', BOOKS[index].cover);
-    filterCov.innerHTML = `${BOOKS[index].cover}`;
+    const FilterCov = document.createElement('li');
+    FilterCov.classList.add('filters-cover__item');
+    FilterCov.setAttribute('id', Books[index].cover);
+    FilterCov.innerHTML = `${Books[index].cover}`;
     if (document.querySelector('.filters-cover__list')) {
-        (document.querySelector('.filters-cover__list') as HTMLUListElement).appendChild(filterCov);
+        (document.querySelector('.filters-cover__list') as HTMLUListElement).appendChild(FilterCov);
     }
 }
 
 export function renderFilterCover() {
-    const COVER_ARRAY: number[] = [];
-    for (let i = 0; i < BOOKS.length; i++) {
-        if (!COVER_ARRAY.includes(BOOKS[i].cover)) {
-            COVER_ARRAY.push(BOOKS[i].cover);
+    const CoverArray: number[] = [];
+    for (let i = 0; i < Books.length; i++) {
+        if (!CoverArray.includes(Books[i].cover)) {
+            CoverArray.push(Books[i].cover);
             filterCover(i);
         }
     }

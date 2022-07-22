@@ -36,12 +36,12 @@ function resetBest() {
 // }
 
 export function resetFilters() {
-    const resetFiltersButton = document.querySelector('.button__filters');
+    const ResetFiltersButton = document.querySelector('.button__filters');
     const AuthorsArray = document.querySelectorAll('.filters-author__item');
     const GenreArray = document.querySelectorAll('.filters-genre__item');
     const CoverArray = document.querySelectorAll('.filters-cover__item');
 
-    resetFiltersButton?.addEventListener('click', () => {
+    ResetFiltersButton?.addEventListener('click', () => {
         localStorage.removeItem('author');
         localStorage.removeItem('genre');
         localStorage.removeItem('cover');

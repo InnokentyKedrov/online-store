@@ -28,13 +28,13 @@ export function basket() {
     }
 
     Books.addEventListener('click', (event) => {
-        const target = event.target as HTMLButtonElement;
-        if (target.tagName !== 'BUTTON') {
+        const Target = event.target as HTMLButtonElement;
+        if (Target.tagName !== 'BUTTON') {
             return;
         }
-        if (target.classList.contains('active')) {
-            target.classList.remove('active');
-            const CurrentTitle = target.parentElement?.querySelector('.books__item_title');
+        if (Target.classList.contains('active')) {
+            Target.classList.remove('active');
+            const CurrentTitle = Target.parentElement?.querySelector('.books__item_title');
             if (CurrentTitle !== undefined && CurrentTitle !== null) {
                 if (BasketArray) {
                     for (let i = 0; i < BasketArray.length; i++) {
@@ -46,8 +46,8 @@ export function basket() {
             }
             basketCount--;
         } else if (basketCount < 20) {
-            target.classList.add('active');
-            const CurrentTitle = target.parentElement?.querySelector('.books__item_title');
+            Target.classList.add('active');
+            const CurrentTitle = Target.parentElement?.querySelector('.books__item_title');
             if (CurrentTitle !== undefined && CurrentTitle !== null) {
                 BasketArray.push(CurrentTitle.innerHTML);
             }
@@ -72,9 +72,9 @@ export function activeBasket() {
     }
     for (let i = 0; i < Title.length; i++) {
         if (currentBasketArray.includes(Title[i].innerHTML)) {
-            const parent = Title[i].parentElement;
-            const button = parent?.querySelector('.books__item_button');
-            button?.classList.add('active');
+            const Parent = Title[i].parentElement;
+            const Button = Parent?.querySelector('.books__item_button');
+            Button?.classList.add('active');
         }
     }
 }
