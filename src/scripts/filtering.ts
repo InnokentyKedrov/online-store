@@ -5,14 +5,14 @@ import { currentSearch } from './search';
 import { sorting } from './sort';
 
 function removeBooks() {
-    const BooksArray = document.querySelectorAll('.books__item');
+    const BooksArray = document.querySelectorAll('.books__item') as NodeListOf<Element>;
     for (let i = 0; i < BooksArray.length; i++) {
         BooksArray[i].remove();
     }
 }
 
 function removeEmptyItem() {
-    const EmptyItem = document.querySelector('.books__item_empty');
+    const EmptyItem = document.querySelector('.books__item_empty') as HTMLLIElement;
     if (EmptyItem) {
         EmptyItem.remove();
     }
@@ -25,11 +25,11 @@ export function currentRender() {
     const [QuantityMin, QuantityMax] = checkQuantity();
     const [YearMin, YearMax] = checkYear();
 
-    let searchArray;
+    let searchArray: string[];
     if (localStorage.getItem('searchArray') === null) {
         searchArray = [];
     } else {
-        searchArray = JSON.parse(localStorage.getItem('searchArray') || '[]');
+        searchArray = JSON.parse(JSON.stringify(localStorage.getItem('searchArray')));
     }
 
     if (localStorage.getItem('best') === null) {
@@ -73,7 +73,7 @@ export function currentRender() {
 
 function checkEmpty() {
     if (document.querySelectorAll('.books__item')[0] === undefined) {
-        const EmptyItem = document.createElement('li');
+        const EmptyItem = document.createElement('li') as HTMLLIElement;
         EmptyItem.classList.add('books__item_empty');
         EmptyItem.innerHTML = `<p>Sorry, we don't any books that fit your description.</p>`;
         if (document.querySelector('.books__list')) {
@@ -170,7 +170,7 @@ export function filteringCover() {
 }
 
 export function filteringBestseller() {
-    const CheckBestseller = document.getElementById('best');
+    const CheckBestseller = document.getElementById('best') as HTMLDivElement;
 
     if (CheckBestseller) {
         CheckBestseller?.addEventListener('click', () => {

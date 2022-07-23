@@ -13,7 +13,7 @@ export interface Ibook {
 }
 
 export function renderBook(index: number) {
-    const Book = document.createElement('li');
+    const Book = document.createElement('li') as HTMLLIElement;
     Book.classList.add('books__item');
     Book.setAttribute('id', String(index));
     Book.innerHTML = `<div class='books__item_container'>

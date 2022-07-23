@@ -24,19 +24,19 @@ renderFilterGenre();
 renderFilterCover();
 
 if (localStorage.getItem('author') !== null) {
-    const Current = JSON.parse(localStorage.getItem('author') || '[]');
+    const Current = JSON.parse(JSON.stringify(localStorage.getItem('author'))) as string;
     for (let i = 0; i < Current.length; i++) {
         (document.getElementById(Current[i]) as HTMLLIElement).classList.add('active');
     }
 }
 if (localStorage.getItem('genre') !== null) {
-    const Current = JSON.parse(localStorage.getItem('genre') || '[]');
+    const Current = JSON.parse(JSON.stringify(localStorage.getItem('genre'))) as string;
     for (let i = 0; i < Current.length; i++) {
         (document.getElementById(Current[i]) as HTMLLIElement).classList.add('active');
     }
 }
 if (localStorage.getItem('cover') !== null) {
-    const Current = JSON.parse(localStorage.getItem('cover') || '[]');
+    const Current = JSON.parse(JSON.stringify(localStorage.getItem('cover'))) as string;
     for (let i = 0; i < Current.length; i++) {
         (document.getElementById(Current[i]) as HTMLLIElement).classList.add('active');
     }

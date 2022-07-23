@@ -4,7 +4,7 @@ import '../styles/nouisliderinit.css';
 import { currentRender } from './filtering';
 
 export function checkQuantity() {
-    let quantityMin, quantityMax;
+    let quantityMin: number, quantityMax: number;
 
     if (localStorage.getItem('quantityMin') === null) {
         quantityMin = 0;
@@ -22,7 +22,7 @@ export function checkQuantity() {
 }
 
 export function checkYear() {
-    let yearMin, yearMax;
+    let yearMin: number, yearMax: number;
 
     if (localStorage.getItem('yearMin') === null) {
         yearMin = 1900;

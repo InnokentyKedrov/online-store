@@ -5,13 +5,13 @@ const Books = require('../assets/books.json');
 
 export function sort() {
     document.addEventListener('DOMContentLoaded', () => {
-        const CurrentSort = localStorage.getItem('sortValue');
+        const CurrentSort: string | null = localStorage.getItem('sortValue');
         if (CurrentSort !== null) {
             const Option = document.getElementById(CurrentSort) as HTMLOptionElement;
             Option.selected = true;
         }
     });
-    let sortValue;
+    let sortValue: string | null;
     if (localStorage.getItem('sortValue') === null) {
         sortValue = 'alphabetAZ';
     } else {
@@ -28,7 +28,7 @@ export function sort() {
 export function sorting() {
     const Select = document.getElementById('sort') as HTMLSelectElement;
 
-    let sortValue;
+    let sortValue: string | null;
     if (localStorage.getItem('sortValue') === null) {
         sortValue = 'alphabetAZ';
         if (Select) {

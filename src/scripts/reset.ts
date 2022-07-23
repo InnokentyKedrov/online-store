@@ -16,10 +16,10 @@ function resetBest() {
 }
 
 export function resetFilters() {
-    const ResetFiltersButton = document.querySelector('.button__filters');
-    const AuthorsArray = document.querySelectorAll('.filters-author__item');
-    const GenreArray = document.querySelectorAll('.filters-genre__item');
-    const CoverArray = document.querySelectorAll('.filters-cover__item');
+    const ResetFiltersButton = document.querySelector('.button__filters') as HTMLButtonElement;
+    const AuthorsArray = document.querySelectorAll('.filters-author__item') as NodeListOf<Element>;
+    const GenreArray = document.querySelectorAll('.filters-genre__item') as NodeListOf<Element>;
+    const CoverArray = document.querySelectorAll('.filters-cover__item') as NodeListOf<Element>;
 
     ResetFiltersButton?.addEventListener('click', () => {
         localStorage.removeItem('author');
@@ -44,7 +44,7 @@ export function resetFilters() {
 }
 
 export function resetAll() {
-    const ButtonAll = document.querySelector('.button__sort');
+    const ButtonAll = document.querySelector('.button__sort') as HTMLButtonElement;
 
     ButtonAll?.addEventListener('click', () => {
         localStorage.clear();

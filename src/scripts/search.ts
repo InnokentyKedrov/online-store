@@ -6,7 +6,7 @@ const Search = document.getElementById('search') as HTMLInputElement;
 export function currentSearch() {
     document.addEventListener('DOMContentLoaded', () => {
         const TitleArray: string[] = [];
-        const CurrentTitleArray = document.querySelectorAll('.books__item_title');
+        const CurrentTitleArray = document.querySelectorAll('.books__item_title') as NodeListOf<Element>;
 
         for (let i = 0; i < CurrentTitleArray.length; i++) {
             TitleArray.push((CurrentTitleArray[i].textContent as string).toLowerCase());
@@ -28,7 +28,7 @@ export function currentSearch() {
 }
 
 export function currentSearchClear() {
-    const FullArray = [];
+    const FullArray: string[] = [];
     for (let i = 0; i < Books.length; i++) {
         FullArray.push(Books[i].title);
     }
@@ -36,7 +36,7 @@ export function currentSearchClear() {
 }
 
 export function searchClean() {
-    const Clean = document.querySelector('.search__clean');
+    const Clean = document.querySelector('.search__clean') as HTMLDivElement;
     Clean?.addEventListener('click', () => {
         Search.value = '';
         currentSearchClear();

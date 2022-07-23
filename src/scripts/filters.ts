@@ -2,7 +2,7 @@ import '../styles/search-and-filters.css';
 const Books = require('../assets/books.json');
 
 function filterAuthor(index: number) {
-    const FilterAuth = document.createElement('li');
+    const FilterAuth = document.createElement('li') as HTMLLIElement;
     FilterAuth.classList.add('filters-author__item');
     FilterAuth.setAttribute('id', Books[index].author);
     FilterAuth.innerHTML = `${Books[index].author}`;
@@ -22,7 +22,7 @@ export function renderFilterAuthor() {
 }
 
 function filterGenre(index: number) {
-    const FilterGen = document.createElement('li');
+    const FilterGen = document.createElement('li') as HTMLLIElement;
     FilterGen.classList.add('filters-genre__item');
     FilterGen.setAttribute('id', Books[index].genre);
     FilterGen.innerHTML = `${Books[index].genre}`;
@@ -42,7 +42,7 @@ export function renderFilterGenre() {
 }
 
 export function filterCover(index: number) {
-    const FilterCov = document.createElement('li');
+    const FilterCov = document.createElement('li') as HTMLLIElement;
     FilterCov.classList.add('filters-cover__item');
     FilterCov.setAttribute('id', Books[index].cover);
     FilterCov.innerHTML = `${Books[index].cover}`;

@@ -1,5 +1,5 @@
 function fullbasket() {
-    const modal = document.getElementById('modal');
+    const modal = document.getElementById('modal') as HTMLDivElement;
     modal?.classList.add('open');
     if (modal?.classList.contains('open')) {
         modal.addEventListener('click', () => {
@@ -10,7 +10,7 @@ function fullbasket() {
 
 export function basket() {
     const Books = document.querySelector('.books__list') as HTMLUListElement;
-    const Basket = document.getElementById('basket') as HTMLElement;
+    const Basket = document.getElementById('basket') as HTMLLinkElement;
 
     let basketCount: number;
     if (localStorage.getItem('basketCount') === null) {
@@ -20,11 +20,11 @@ export function basket() {
     }
     Basket.dataset.after = String(basketCount);
 
-    let BasketArray: string[];
-    if (localStorage.getItem('BasketArray') === null) {
-        BasketArray = [];
+    let basketArray: string[];
+    if (localStorage.getItem('basketArray') === null) {
+        basketArray = [];
     } else {
-        BasketArray = JSON.parse(localStorage.getItem('BasketArray') || '[]');
+        basketArray = JSON.parse(JSON.stringify(localStorage.getItem('basketArray')));
     }
 
     Books.addEventListener('click', (event) => {
@@ -34,12 +34,12 @@ export function basket() {
         }
         if (Target.classList.contains('active')) {
             Target.classList.remove('active');
-            const CurrentTitle = Target.parentElement?.querySelector('.books__item_title');
+            const CurrentTitle = Target.parentElement?.querySelector('.books__item_title') as HTMLHeadElement;
             if (CurrentTitle !== undefined && CurrentTitle !== null) {
-                if (BasketArray) {
-                    for (let i = 0; i < BasketArray.length; i++) {
-                        if (BasketArray[i] === CurrentTitle.innerHTML) {
-                            BasketArray.splice(i, 1);
+                if (basketArray) {
+                    for (let i = 0; i < basketArray.length; i++) {
+                        if (basketArray[i] === CurrentTitle.innerHTML) {
+                            basketArray.splice(i, 1);
                         }
                     }
                 }
@@ -47,33 +47,33 @@ export function basket() {
             basketCount--;
         } else if (basketCount < 20) {
             Target.classList.add('active');
-            const CurrentTitle = Target.parentElement?.querySelector('.books__item_title');
+            const CurrentTitle = Target.parentElement?.querySelector('.books__item_title') as HTMLHeadElement;
             if (CurrentTitle !== undefined && CurrentTitle !== null) {
-                BasketArray.push(CurrentTitle.innerHTML);
+                basketArray.push(CurrentTitle.innerHTML);
             }
             basketCount++;
         } else {
             fullbasket();
         }
 
-        localStorage.setItem('BasketArray', JSON.stringify(BasketArray));
+        localStorage.setItem('basketArray', JSON.stringify(basketArray));
         Basket.dataset.after = String(basketCount);
         localStorage.setItem('basketCount', String(basketCount));
     });
 }
 
 export function activeBasket() {
-    const Title = document.querySelectorAll('.books__item_title');
+    const Title = document.querySelectorAll('.books__item_title') as NodeListOf<Element>;
     let currentBasketArray: string[];
-    if (localStorage.getItem('BasketArray') === null) {
+    if (localStorage.getItem('basketArray') === null) {
         currentBasketArray = [];
     } else {
-        currentBasketArray = JSON.parse(localStorage.getItem('BasketArray') || '[]');
+        currentBasketArray = JSON.parse(JSON.stringify(localStorage.getItem('basketArray')));
     }
     for (let i = 0; i < Title.length; i++) {
         if (currentBasketArray.includes(Title[i].innerHTML)) {
-            const Parent = Title[i].parentElement;
-            const Button = Parent?.querySelector('.books__item_button');
+            const Parent = Title[i].parentElement as HTMLLIElement;
+            const Button = Parent?.querySelector('.books__item_button') as HTMLButtonElement;
             Button?.classList.add('active');
         }
     }
