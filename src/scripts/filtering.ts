@@ -6,8 +6,8 @@ import { sorting } from './sort';
 
 function removeBooks() {
     const BooksArray = document.querySelectorAll('.books__item') as NodeListOf<Element>;
-    for (let i = 0; i < BooksArray.length; i++) {
-        BooksArray[i].remove();
+    for (const Book of BooksArray) {
+        Book.remove();
     }
 }
 
@@ -33,36 +33,34 @@ export function currentRender() {
     }
 
     if (localStorage.getItem('best') === null) {
-        for (let i = 0; i < Books.length; i++) {
+        for (const Book of Books) {
             if (
-                (localStorage.getItem('author')?.includes(Books[i].author) ||
-                    localStorage.getItem('author') === null) &&
-                (localStorage.getItem('genre')?.includes(Books[i].genre) || localStorage.getItem('genre') === null) &&
-                (localStorage.getItem('cover')?.includes(Books[i].cover) || localStorage.getItem('cover') === null) &&
-                Books[i].quantity <= QuantityMax &&
-                Books[i].quantity >= QuantityMin &&
-                Books[i].year <= YearMax &&
-                Books[i].year >= YearMin &&
-                searchArray.includes(Books[i].title)
+                (localStorage.getItem('author')?.includes(Book.author) || localStorage.getItem('author') === null) &&
+                (localStorage.getItem('genre')?.includes(Book.genre) || localStorage.getItem('genre') === null) &&
+                (localStorage.getItem('cover')?.includes(Book.cover) || localStorage.getItem('cover') === null) &&
+                Book.quantity <= QuantityMax &&
+                Book.quantity >= QuantityMin &&
+                Book.year <= YearMax &&
+                Book.year >= YearMin &&
+                searchArray.includes(Book.title)
             ) {
-                renderBook(i);
+                renderBook(Book);
             }
         }
     } else {
-        for (let i = 0; i < Books.length; i++) {
+        for (const Book of Books) {
             if (
-                (localStorage.getItem('author')?.includes(Books[i].author) ||
-                    localStorage.getItem('author') === null) &&
-                (localStorage.getItem('genre')?.includes(Books[i].genre) || localStorage.getItem('genre') === null) &&
-                (localStorage.getItem('cover')?.includes(Books[i].cover) || localStorage.getItem('cover') === null) &&
-                Books[i].bestseller === 'true' &&
-                Books[i].quantity <= QuantityMax &&
-                Books[i].quantity >= QuantityMin &&
-                Books[i].year <= YearMax &&
-                Books[i].year >= YearMin &&
-                searchArray.includes(Books[i].title)
+                (localStorage.getItem('author')?.includes(Book.author) || localStorage.getItem('author') === null) &&
+                (localStorage.getItem('genre')?.includes(Book.genre) || localStorage.getItem('genre') === null) &&
+                (localStorage.getItem('cover')?.includes(Book.cover) || localStorage.getItem('cover') === null) &&
+                Book.bestseller === 'true' &&
+                Book.quantity <= QuantityMax &&
+                Book.quantity >= QuantityMin &&
+                Book.year <= YearMax &&
+                Book.year >= YearMin &&
+                searchArray.includes(Book.title)
             ) {
-                renderBook(i);
+                renderBook(Book);
             }
         }
     }

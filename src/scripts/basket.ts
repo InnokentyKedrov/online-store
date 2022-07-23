@@ -24,7 +24,7 @@ export function basket() {
     if (localStorage.getItem('basketArray') === null) {
         basketArray = [];
     } else {
-        basketArray = JSON.parse(JSON.stringify(localStorage.getItem('basketArray')));
+        basketArray = JSON.parse(localStorage.getItem('basketArray') || '[]');
     }
 
     Books.addEventListener('click', (event) => {
@@ -63,16 +63,16 @@ export function basket() {
 }
 
 export function activeBasket() {
-    const Title = document.querySelectorAll('.books__item_title') as NodeListOf<Element>;
+    const Titles = document.querySelectorAll('.books__item_title') as NodeListOf<Element>;
     let currentBasketArray: string[];
     if (localStorage.getItem('basketArray') === null) {
         currentBasketArray = [];
     } else {
         currentBasketArray = JSON.parse(JSON.stringify(localStorage.getItem('basketArray')));
     }
-    for (let i = 0; i < Title.length; i++) {
-        if (currentBasketArray.includes(Title[i].innerHTML)) {
-            const Parent = Title[i].parentElement as HTMLLIElement;
+    for (const Title of Titles) {
+        if (currentBasketArray.includes(Title.innerHTML)) {
+            const Parent = Title.parentElement as HTMLLIElement;
             const Button = Parent?.querySelector('.books__item_button') as HTMLButtonElement;
             Button?.classList.add('active');
         }

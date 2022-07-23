@@ -1,11 +1,12 @@
 import '../styles/search-and-filters.css';
+import { Ibook } from './books';
 const Books = require('../assets/books.json');
 
-function filterAuthor(index: number) {
+function filterAuthor(Book: Ibook) {
     const FilterAuth = document.createElement('li') as HTMLLIElement;
     FilterAuth.classList.add('filters-author__item');
-    FilterAuth.setAttribute('id', Books[index].author);
-    FilterAuth.innerHTML = `${Books[index].author}`;
+    FilterAuth.setAttribute('id', Book.author);
+    FilterAuth.innerHTML = `${Book.author}`;
     if (document.querySelector('.filters-author__list')) {
         (document.querySelector('.filters-author__list') as HTMLUListElement).appendChild(FilterAuth);
     }
@@ -13,19 +14,19 @@ function filterAuthor(index: number) {
 
 export function renderFilterAuthor() {
     const AuthorsArray: number[] = [];
-    for (let i = 0; i < Books.length; i++) {
-        if (!AuthorsArray.includes(Books[i].author)) {
-            AuthorsArray.push(Books[i].author);
-            filterAuthor(i);
+    for (const Book of Books) {
+        if (!AuthorsArray.includes(Book.author)) {
+            AuthorsArray.push(Book.author);
+            filterAuthor(Book);
         }
     }
 }
 
-function filterGenre(index: number) {
+function filterGenre(Book: Ibook) {
     const FilterGen = document.createElement('li') as HTMLLIElement;
     FilterGen.classList.add('filters-genre__item');
-    FilterGen.setAttribute('id', Books[index].genre);
-    FilterGen.innerHTML = `${Books[index].genre}`;
+    FilterGen.setAttribute('id', Book.genre);
+    FilterGen.innerHTML = `${Book.genre}`;
     if (document.querySelector('.filters-genre__list')) {
         (document.querySelector('.filters-genre__list') as HTMLUListElement).appendChild(FilterGen);
     }
@@ -33,19 +34,19 @@ function filterGenre(index: number) {
 
 export function renderFilterGenre() {
     const GenreArray: number[] = [];
-    for (let i = 0; i < Books.length; i++) {
-        if (!GenreArray.includes(Books[i].genre)) {
-            GenreArray.push(Books[i].genre);
-            filterGenre(i);
+    for (const Book of Books) {
+        if (!GenreArray.includes(Book.genre)) {
+            GenreArray.push(Book.genre);
+            filterGenre(Book);
         }
     }
 }
 
-export function filterCover(index: number) {
+export function filterCover(Book: Ibook) {
     const FilterCov = document.createElement('li') as HTMLLIElement;
     FilterCov.classList.add('filters-cover__item');
-    FilterCov.setAttribute('id', Books[index].cover);
-    FilterCov.innerHTML = `${Books[index].cover}`;
+    FilterCov.setAttribute('id', Book.cover);
+    FilterCov.innerHTML = `${Book.cover}`;
     if (document.querySelector('.filters-cover__list')) {
         (document.querySelector('.filters-cover__list') as HTMLUListElement).appendChild(FilterCov);
     }
@@ -53,10 +54,10 @@ export function filterCover(index: number) {
 
 export function renderFilterCover() {
     const CoverArray: number[] = [];
-    for (let i = 0; i < Books.length; i++) {
-        if (!CoverArray.includes(Books[i].cover)) {
-            CoverArray.push(Books[i].cover);
-            filterCover(i);
+    for (const Book of Books) {
+        if (!CoverArray.includes(Book.cover)) {
+            CoverArray.push(Book.cover);
+            filterCover(Book);
         }
     }
 }

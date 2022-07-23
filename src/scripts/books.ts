@@ -1,5 +1,4 @@
 import '../styles/book-style.css';
-const Books = require('../assets/books.json');
 
 export interface Ibook {
     title: string;
@@ -12,19 +11,19 @@ export interface Ibook {
     bestseller: string;
 }
 
-export function renderBook(index: number) {
+export function renderBook(Books: Ibook) {
     const Book = document.createElement('li') as HTMLLIElement;
     Book.classList.add('books__item');
-    Book.setAttribute('id', String(index));
+    // Book.setAttribute('id', String(index));
     Book.innerHTML = `<div class='books__item_container'>
-                        <h3 class='books__item_title'>${Books[index].title}</h3>
-                        <div class='books__item_image' id='${Books[index].img}'></div>
+                        <h3 class='books__item_title'>${Books.title}</h3>
+                        <div class='books__item_image' id='${Books.img}'></div>
                         <table class='books__item_table'>
-                          <tr><th>Year of release: </th><td>${Books[index].year}</td></tr>
-                          <tr><th>Author: </th><td>${Books[index].author}</td></tr>
-                          <tr><th>Genre: </th><td>${Books[index].genre}</td></tr>
-                          <tr><th>Cover: </th><td>${Books[index].cover}</td></tr>
-                          <tr><th>Quantity: </th><td>${Books[index].quantity}</td></tr>
+                          <tr><th>Year of release: </th><td>${Books.year}</td></tr>
+                          <tr><th>Author: </th><td>${Books.author}</td></tr>
+                          <tr><th>Genre: </th><td>${Books.genre}</td></tr>
+                          <tr><th>Cover: </th><td>${Books.cover}</td></tr>
+                          <tr><th>Quantity: </th><td>${Books.quantity}</td></tr>
                         </table>
                         <button class='books__item_button'>In basket</button>
                       </div>`;

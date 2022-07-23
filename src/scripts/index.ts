@@ -23,24 +23,18 @@ renderFilterAuthor();
 renderFilterGenre();
 renderFilterCover();
 
-if (localStorage.getItem('author') !== null) {
-    const Current = JSON.parse(JSON.stringify(localStorage.getItem('author'))) as string;
-    for (let i = 0; i < Current.length; i++) {
-        (document.getElementById(Current[i]) as HTMLLIElement).classList.add('active');
+function activeItem(item: string) {
+    if (localStorage.getItem(item) !== null) {
+        const Currents = JSON.parse(localStorage.getItem(item) || '[]');
+        for (const Current of Currents) {
+            (document.getElementById(Current) as HTMLLIElement).classList.add('active');
+        }
     }
 }
-if (localStorage.getItem('genre') !== null) {
-    const Current = JSON.parse(JSON.stringify(localStorage.getItem('genre'))) as string;
-    for (let i = 0; i < Current.length; i++) {
-        (document.getElementById(Current[i]) as HTMLLIElement).classList.add('active');
-    }
-}
-if (localStorage.getItem('cover') !== null) {
-    const Current = JSON.parse(JSON.stringify(localStorage.getItem('cover'))) as string;
-    for (let i = 0; i < Current.length; i++) {
-        (document.getElementById(Current[i]) as HTMLLIElement).classList.add('active');
-    }
-}
+activeItem('author');
+activeItem('genre');
+activeItem('cover');
+
 if (localStorage.getItem('best') !== null) {
     (document.getElementById('best') as HTMLLIElement).classList.add('checked');
 }

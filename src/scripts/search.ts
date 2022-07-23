@@ -8,17 +8,17 @@ export function currentSearch() {
         const TitleArray: string[] = [];
         const CurrentTitleArray = document.querySelectorAll('.books__item_title') as NodeListOf<Element>;
 
-        for (let i = 0; i < CurrentTitleArray.length; i++) {
-            TitleArray.push((CurrentTitleArray[i].textContent as string).toLowerCase());
+        for (const CurrentTitle of CurrentTitleArray) {
+            TitleArray.push((CurrentTitle.textContent as string).toLowerCase());
         }
         Search?.addEventListener('keyup', () => {
             const SearchArray: string[] = [];
-            for (let i = 0; i < Books.length; i++) {
+            for (const Book of Books) {
                 if (
-                    TitleArray.includes(Books[i].title.toLowerCase()) &&
-                    Books[i].title.toLowerCase().indexOf(Search.value.toLowerCase()) != -1
+                    TitleArray.includes(Book.title.toLowerCase()) &&
+                    Book.title.toLowerCase().indexOf(Search.value.toLowerCase()) != -1
                 ) {
-                    SearchArray.push(Books[i].title);
+                    SearchArray.push(Book.title);
                 }
             }
             localStorage.setItem('searchArray', JSON.stringify(SearchArray));
@@ -29,8 +29,8 @@ export function currentSearch() {
 
 export function currentSearchClear() {
     const FullArray: string[] = [];
-    for (let i = 0; i < Books.length; i++) {
-        FullArray.push(Books[i].title);
+    for (const Book of Books) {
+        FullArray.push(Book.title);
     }
     localStorage.setItem('searchArray', JSON.stringify(FullArray));
 }
