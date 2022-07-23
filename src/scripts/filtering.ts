@@ -22,14 +22,15 @@ export function currentRender() {
     removeBooks();
     removeEmptyItem();
     const Books = sorting();
+    const [QuantityMin, QuantityMax] = checkQuantity();
+    const [YearMin, YearMax] = checkYear();
+
     let searchArray;
     if (localStorage.getItem('searchArray') === null) {
         searchArray = [];
     } else {
         searchArray = JSON.parse(localStorage.getItem('searchArray') || '[]');
     }
-    const [quantityMin, quantityMax] = checkQuantity();
-    const [yearMin, yearMax] = checkYear();
 
     if (localStorage.getItem('best') === null) {
         for (let i = 0; i < Books.length; i++) {
@@ -38,10 +39,10 @@ export function currentRender() {
                     localStorage.getItem('author') === null) &&
                 (localStorage.getItem('genre')?.includes(Books[i].genre) || localStorage.getItem('genre') === null) &&
                 (localStorage.getItem('cover')?.includes(Books[i].cover) || localStorage.getItem('cover') === null) &&
-                Books[i].quantity <= quantityMax &&
-                Books[i].quantity >= quantityMin &&
-                Books[i].year <= yearMax &&
-                Books[i].year >= yearMin &&
+                Books[i].quantity <= QuantityMax &&
+                Books[i].quantity >= QuantityMin &&
+                Books[i].year <= YearMax &&
+                Books[i].year >= YearMin &&
                 searchArray.includes(Books[i].title)
             ) {
                 renderBook(i);
@@ -55,17 +56,22 @@ export function currentRender() {
                 (localStorage.getItem('genre')?.includes(Books[i].genre) || localStorage.getItem('genre') === null) &&
                 (localStorage.getItem('cover')?.includes(Books[i].cover) || localStorage.getItem('cover') === null) &&
                 Books[i].bestseller === 'true' &&
-                Books[i].quantity <= quantityMax &&
-                Books[i].quantity >= quantityMin &&
-                Books[i].year <= yearMax &&
-                Books[i].year >= yearMin &&
+                Books[i].quantity <= QuantityMax &&
+                Books[i].quantity >= QuantityMin &&
+                Books[i].year <= YearMax &&
+                Books[i].year >= YearMin &&
                 searchArray.includes(Books[i].title)
             ) {
                 renderBook(i);
             }
         }
     }
+    checkEmpty();
+    activeBasket();
+    currentSearch();
+}
 
+function checkEmpty() {
     if (document.querySelectorAll('.books__item')[0] === undefined) {
         const EmptyItem = document.createElement('li');
         EmptyItem.classList.add('books__item_empty');
@@ -74,8 +80,6 @@ export function currentRender() {
             (document.querySelector('.books__list') as HTMLUListElement).appendChild(EmptyItem);
         }
     }
-    activeBasket();
-    currentSearch();
 }
 
 export function filteringAuthor() {
